@@ -1,0 +1,225 @@
+<MetaSchema id="materials" inherit="ecs" unsized="1">
+	<Primitive name="enum.SOLID_STATIC" type="int" size="4" nice_name="materialtype" />
+	<Primitive name="string.direction" type="string" size="24"  nice_name="direction" />
+
+	<Object name="Image">
+		<Field name="filename" predef="string" />
+		<Field name="min_angle" predef="float" />
+		<Field name="max_angle" predef="float" />
+		<Field name="do_only_horizontal_stripe" predef="bool" />
+		<Field name="do_only_vertical_stripe" predef="bool" />
+		<Field name="allow_random_rotation" predef="bool" />
+	</Object>
+
+	<Object name="Images">
+		<FieldArray name="Image" predef="Image" />
+	</Object>
+
+	<Object name="EdgeGraphics">
+		<Field name="type" predef="string" />
+		<Field name="z" predef="float" />
+		<Field name="percent" predef="float" />
+		<Field name="require_same_material" predef="bool" />
+		<Field name="require_same_material_type" predef="bool" />
+		<Field name="overwrite" predef="bool" />
+		<Field name="color" predef="string.hexcolor" />
+		<Field name="" predef="bool" />
+	</Object>
+
+	<Object name="Edge">
+		<Field name="EdgeGraphics" predef="EdgeGraphics" />
+	</Object>
+
+	<Object name="Graphics">
+		<Field name="texture_file" predef="string" />
+		<Field name="randomize_colors" predef="bool" />
+		<Field name="is_grass" predef="bool" />
+		<Field name="color" predef="string.hexcolor" />
+		<Field name="normal_mapped" predef="bool" />
+		<Field name="fire_colors_index" predef="int" />
+		<Field name="pixel_lonely" predef="string.hexcolor" />
+		<Field name="pixel_top_left" predef="string.hexcolor" />
+		<Field name="pixel_top" predef="string.hexcolor" />
+		<Field name="pixel_top_right" predef="string.hexcolor" />
+		<Field name="pixel_right" predef="string.hexcolor" />
+		<Field name="pixel_bottom_right" predef="string.hexcolor" />
+		<Field name="pixel_bottom" predef="string.hexcolor" />
+		<Field name="pixel_bottom_left" predef="string.hexcolor" />
+		<Field name="pixel_left" predef="string.hexcolor" />
+		<Field name="pixel_all_around" predef="string.hexcolor" />
+	</Object>
+
+	<!-- ParticleEmitterComponent -->
+	<Object name="ParticleEffect">
+	    <Field name="emitted_material_name" predef="string" />
+	    <Field name="create_real_particles" predef="bool" />
+	    <Field name="emit_real_particles" predef="bool" />
+	    <Field name="emit_cosmetic_particles" predef="bool" />
+	    <Field name="cosmetic_force_create" predef="bool" />
+	    <Field name="render_back" predef="bool" />
+	    <Field name="collide_with_grid" predef="bool" />
+	    <Field name="collide_with_gas_and_fire" predef="bool" />
+	    <Field name="particle_single_width" predef="bool" />
+	    <Field name="emitter_lifetime_frames" predef="int" />
+	    <Field name="fire_cells_dont_ignite_damagemodel" predef="bool" />
+	    <Field name="color" predef="unsigned int" />
+	    <Field name="offset" predef="class ceng::math::CVector2[float]" />
+	    <Field name="x_pos_offset_min" predef="float" />
+	    <Field name="y_pos_offset_min" predef="float" />
+	    <Field name="x_pos_offset_max" predef="float" />
+	    <Field name="y_pos_offset_max" predef="float" />
+	    <Field name="area_circle_radius" predef="struct ValueRange" />
+	    <Field name="area_circle_sector_degrees" predef="float" />
+	    <Field name="x_vel_min" predef="float" />
+	    <Field name="x_vel_max" predef="float" />
+	    <Field name="y_vel_min" predef="float" />
+	    <Field name="y_vel_max" predef="float" />
+	    <Field name="direction_random_deg" predef="float" />
+	    <Field name="gravity" predef="class ceng::math::CVector2[float]" />
+	    <Field name="velocity_always_away_from_center" predef="float" />
+	    <Field name="lifetime_min" predef="float" />
+	    <Field name="lifetime_max" predef="float" />
+	    <Field name="airflow_force" predef="float" />
+	    <Field name="airflow_time" predef="float" />
+	    <Field name="airflow_scale" predef="float" />
+	    <Field name="friction" predef="float" />
+	    <Field name="attractor_force" predef="float" />
+	    <Field name="count_min" predef="int" />
+	    <Field name="count_max" predef="int" />
+	    <Field name="emission_interval_min_frames" predef="int" />
+	    <Field name="emission_interval_max_frames" predef="int" />
+	    <Field name="emission_chance" predef="int" />
+	    <Field name="custom_style" predef="enum PARTICLE_EMITTER_CUSTOM_STYLE::Enum" />
+	    <Field name="delay_frames" predef="int" />
+	    <Field name="is_emitting" predef="bool" />
+	    <Field name="use_material_inventory" predef="bool" />
+	    <Field name="is_trail" predef="bool" />
+	    <Field name="trail_gap" predef="float" />
+	    <Field name="render_on_grid" predef="bool" />
+	    <Field name="fade_based_on_lifetime" predef="bool" />
+	    <Field name="draw_as_long" predef="bool" />
+	    <Field name="b2_force" predef="float" />
+	    <Field name="set_magic_creation" predef="bool" />
+	    <Field name="image_animation_file" predef="string" />
+	    <Field name="image_animation_colors_file" predef="string" />
+	    <Field name="image_animation_speed" predef="float" />
+	    <Field name="image_animation_loop" predef="bool" />
+	    <Field name="image_animation_phase" predef="float" />
+	    <Field name="image_animation_emission_probability" predef="float" />
+	    <Field name="image_animation_raytrace_from_center" predef="bool" />
+    </Object>
+
+	<Object name="CellData">
+		<Field name="Graphics" predef="Graphics" />
+		<Field name="ExplosionConfig" predef="class ConfigExplosion" />
+		<FieldArray name="ParticleEffect" predef="ParticleEffect" />
+
+		<Field name="name" predef="string" />
+		<Field name="ui_name" predef="string" />
+		<Field name="cell_type" predef="string" />
+		<Field name="platform_type" predef="int" />
+		<Field name="gfx_glow" predef="int" />
+		<Field name="gfx_glow_color" predef="string.hexcolor" />
+		<Field name="wang_color" predef="string.hexcolor" />
+		<Field name="cell_holes_in_texture" predef="bool" />
+		<Field name="stainable" predef="bool" />
+		<Field name="burnable" predef="bool" />
+		<Field name="on_fire" predef="bool" />
+		<Field name="fire_hp" predef="int" />
+		<Field name="autoignition_temperature" predef="int" />
+		<Field name="temperature_of_fire" predef="int" />
+		<Field name="generates_smoke" predef="bool" /> <!-- read as int, acts as bool -->
+		<Field name="generates_flames" predef="bool" /> <!-- see above -->
+		<Field name="requires_oxygen" predef="bool" />
+		<Field name="on_fire_convert_to_material" predef="string" />
+		<Field name="on_fire_flame_material" predef="string" />
+		<Field name="on_fire_smoke_material" predef="string" />
+		<Field name="durability" predef="int" />
+		<Field name="lifetime" predef="int" />
+		<Field name="density" predef="float" />
+		<Field name="liquid_gravity" predef="float" />
+		<Field name="liquid_slime" predef="bool" />
+		<Field name="liquid_sand" predef="bool" />
+		<Field name="liquid_viscosity" predef="int" />
+		<Field name="liquid_static" predef="bool" />
+		<Field name="liquid_stains" predef="int" />
+		<Field name="liquid_stains_self" predef="bool" />
+		<Field name="liquid_stains_custom_color" predef="string.hexcolor" />
+		<Field name="liquid_sprite_stain_shaken_drop_chance" predef="int" />
+		<Field name="liquid_sprite_stain_ignited_drop_chance" predef="int" />
+		<Field name="liquid_sprite_stains_check_offset" predef="int" /> <!-- liquid->liauid typo'd in materials.xml -->
+		<Field name="liquid_sprite_stains_status_threshold" predef="float" />
+		<Field name="liquid_sticks_to_ceiling" predef="int" />
+		<Field name="liquid_damping" predef="float" />
+		<Field name="liquid_flow_speed" predef="float" />
+		<Field name="liquid_sand_never_box2d" predef="bool" />
+		<Field name="crackability" predef="int" />
+		<Field name="electrical_conductivity" predef="int" />
+		<Field name="slippery" predef="bool" />
+		<Field name="stickyness" predef="float" />
+		<Field name="gas_speed" predef="string" unknown="1" /> <!-- difficult to figure out the types for these -->
+		<Field name="gas_upwards_speed" predef="string" unknown="1" />
+		<Field name="gas_horizontal_speed" predef="string" unknown="1" />
+		<Field name="gas_downwards_speed" predef="string" unknown="1" />
+		<Field name="solid_friction" predef="float" />
+		<Field name="solid_restitution" predef="float" />
+		<Field name="solid_gravity_scale" predef="float" />
+		<Field name="solid_on_collision_splash_power" predef="float" />
+		<Field name="solid_on_collision_material" predef="string" />
+		<Field name="solid_on_collision_explode" predef="bool" />
+		<Field name="solid_on_sleep_convert" predef="bool" />
+		<Field name="solid_on_collision_convert" predef="bool" />
+		<Field name="solid_static_type" predef="enum.SOLID_STATIC" />
+		<Field name="solid_on_break_explode" predef="bool" />
+		<Field name="solid_break_to_type" predef="string" />
+		<Field name="solid_go_through_sand" predef="bool" />
+		<Field name="solid_collide_with_self" predef="bool" />
+		<Field name="convert_to_box2d_material" predef="string" />
+		<Field name="hp" predef="int" />
+		<Field name="vegetation_full_lifetime_growth" predef="int" />
+		<Field name="vegetation_sprite" predef="string" />
+		<Field name="wang_noise_percent" predef="float" />
+		<Field name="wang_curvature" predef="float" />
+		<Field name="wang_noise_type" predef="int" />
+		<Field name="tags" predef="string.csv" />
+		<Field name="danger_fire" predef="bool" />
+		<Field name="danger_radioactive" predef="bool" />
+		<Field name="danger_poison" predef="bool" />
+		<Field name="danger_water" predef="bool" />
+		<Field name="status_effects" predef="string" />
+		<Field name="always_ignites_damagemodel" predef="bool" />
+		<Field name="audio_physics_material_event" predef="string" />
+		<Field name="audio_physics_material_wall" predef="string" />
+		<Field name="audio_physics_material_solid" predef="string" />
+		<Field name="audio_materialaudio_type" predef="string" />
+		<Field name="audio_materialbreakaudio_type" predef="string" />
+		<Field name="audio_size_multiplier" predef="float" />
+		<Field name="audio_is_soft" predef="bool" />
+	</Object>
+	<Object name="CellDataChild" inherit="CellData">
+		<Field name="_parent" predef="string" />
+		<Field name="_inherit_reactions" predef="bool" />
+	</Object>
+	<Object name="Reaction">
+		<Field name="ExplosionConfig" predef="class ConfigExplosion" />
+		<Field name="fast_reaction" predef="bool" />
+		<Field name="probability" predef="float" />
+		<Field name="input_cell1" predef="string" />
+		<Field name="input_cell2" predef="string" />
+		<Field name="input_cell3" predef="string" />
+		<Field name="output_cell1" predef="string" />
+		<Field name="output_cell2" predef="string" />
+		<Field name="output_cell3" predef="string" />
+		<Field name="cosmetic_particle" predef="string" />
+		<Field name="req_lifetime" predef="int" />
+		<Field name="blob_radius1" predef="int" />
+		<Field name="blob_radius2" predef="int" />
+		<Field name="blob_restrict_to_input_material1" predef="bool" />
+		<Field name="blob_restrict_to_input_material2" predef="bool" />
+		<Field name="destroy_horizontally_lonely_pixels" predef="bool" />
+		<Field name="direction" predef="string.direction" />
+		<Field name="convert_all" predef="bool" />
+		<Field name="entity" predef="string" />
+		<Field name="audio_fx_volume_1" predef="float" />
+	</Object>
+</MetaSchema>

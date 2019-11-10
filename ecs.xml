@@ -1,0 +1,288 @@
+﻿<MetaSchema id="ecs">
+	<SchemaOverrides>
+		<Override component="CellEaterComponent" var="materials" override_type="string" />
+	</SchemaOverrides>
+
+	<Primitive name="int" type="int" size="4" />
+	<Primitive name="float" type="float" size="4"/>
+	<Primitive name="unsigned int" type="uint" size="4" />
+	<Primitive name="bool" type="bool" size="1" />
+	<Primitive name="double" type="double" size="8" />
+	<Primitive name="class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ]" type="string" size="24" nice_name="string"/>
+
+	<Alias name="string" alias="class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ]" />
+
+	<MultiAttr name="class ceng::CColorFloat" size="20">
+		<Field name="r" predef="float" />
+		<Field name="g" predef="float" />
+		<Field name="b" predef="float" />
+		<Field name="a" predef="float" />
+	</MultiAttr>
+
+	<MultiAttr name="class ceng::math::CVector2[float]" size="8">
+		<Field name="x" predef="float" />
+		<Field name="y" predef="float" />
+	</MultiAttr>
+
+	<MultiAttr name="class ceng::math::CVector2[int]" size="8">
+		<Field name="x" predef="int" />
+		<Field name="y" predef="int" />
+	</MultiAttr>
+
+	<MultiAttr name="struct ValueRange" size="8">
+		<Field name="min" predef="float" />
+		<Field name="max" predef="float" />
+	</MultiAttr>
+
+	<MultiAttr name="struct ValueRangeInt" size="8">
+		<Field name="min" predef="int" />
+		<Field name="max" predef="int" />
+	</MultiAttr>	
+
+	<Object name="class ConfigDamageCritical" size="16">
+		<Field name="chance" predef="int" />
+		<Field name="damage_multiplier" predef="double" />
+	</Object>
+
+	<Object name="class ConfigDamagesByType" size="52">
+		<Field name="explosion" predef="double" />
+		<Field name="electricity" predef="double" />
+		<Field name="fire" predef="double" />
+		<Field name="drill" predef="double" />
+		<Field name="slice" predef="double" />
+		<Field name="ice" predef="double" />
+		<Field name="healing" predef="double" />
+		<Field name="physics_hit" predef="double" />
+		<Field name="radioactive" predef="double" />
+		<Field name="poison" predef="double" />
+	</Object>
+
+	<Object name="class ConfigDrugFx" size="28">
+		<Field name="distortion_amount" predef="double" />
+		<Field name="strobe_amount" predef="double" />
+		<Field name="after_image_amount" predef="double" />
+		<Field name="after_image_zoom_mult" predef="double" />
+		<Field name="after_image_zoom_amount" predef="double" />
+		<Field name="nightvision_amount" predef="double" />
+	</Object>
+
+	<Object name="class ConfigExplosion" size="356">
+		<Field name="explosion_sprite_emissive" predef="bool" />
+		<Field name="explosion_sprite_additive" predef="bool" />
+		<Field name="explosion_sprite_random_rotation" predef="double" />
+		<Field name="damage" predef="double" />
+		<Field name="damage_critical" predef="class ConfigDamageCritical" />
+		<Field name="camera_shake" predef="double" />
+		<Field name="particle_effect" predef="bool" />
+		<Field name="load_this_entity" predef="string" />
+		<Field name="light_enabled" predef="bool" />
+		<Field name="light_fade_time" predef="double" />
+		<Field name="light_r" predef="int" />
+		<Field name="light_g" predef="int" />
+		<Field name="light_b" predef="int" />
+		<Field name="light_radius_coeff" predef="double" />
+		<Field name="hole_enabled" predef="bool" />
+		<Field name="destroy_non_platform_solid_enabled" predef="bool" />
+		<Field name="electricity_count" predef="int" />
+		<Field name="min_radius_for_cracks" predef="int" />
+		<Field name="crack_count" predef="int" />
+		<Field name="knockback_force" predef="double" />
+		<Field name="hole_destroy_liquid" predef="bool" />
+		<Field name="hole_destroy_physics_dynamic" predef="bool" />
+		<Field name="create_cell_material" predef="string" />
+		<Field name="create_cell_probability" predef="int" />
+		<Field name="background_lightning_count" predef="int" />
+		<Field name="spark_material" predef="string" />
+		<Field name="material_sparks_min_hp" predef="int" />
+		<Field name="material_sparks_probability" predef="int" />
+		<Field name="material_sparks_count_min" predef="int" />
+		<Field name="material_sparks_count_max" predef="int" />
+		<Field name="material_sparks_enabled" predef="bool" />
+		<Field name="material_sparks_real" predef="bool" />
+		<Field name="material_sparks_scale_with_hp" predef="bool" />
+		<Field name="sparks_enabled" predef="bool" />
+		<Field name="sparks_count_min" predef="int" />
+		<Field name="sparks_count_max" predef="int" />
+		<Field name="stains_enabled" predef="bool" />
+		<Field name="stains_radius" predef="double" />
+		<Field name="ray_energy" predef="int" />
+		<Field name="max_durability_to_destroy" predef="int" />
+		<Field name="gore_particle_count" predef="int" />
+		<Field name="sparks_count_min" predef="int" />
+		<Field name="shake_vegetation" predef="bool" />
+		<Field name="damage_mortals" predef="bool" />
+		<Field name="physics_throw_enabled" predef="bool" />
+		<Field name="physics_explosion_power" predef="class ceng::math::CVector2[float]" />
+		<Field name="physics_multiplier_ragdoll_force" predef="double" />
+		<Field name="cell_explosion_power" predef="double" />
+		<Field name="cell_explosion_radius_min" predef="double" />
+		<Field name="cell_explosion_radius_max" predef="double" />
+		<Field name="cell_explosion_velocity_min" predef="double" />
+		<Field name="cell_explosion_damage_required" predef="double" />
+		<Field name="cell_explosion_radius_min" predef="double" />
+		<Field name="cell_explosion_probability" predef="double" />
+		<Field name="cell_explosion_power_ragdoll_coeff" predef="double" />
+		<Field name="pixel_sprites_enabled" predef="bool" />
+		<Field name="is_digger" predef="bool" />
+		<Field name="audio_enabled" predef="bool" />
+		<Field name="audio_event_name" predef="string" />
+		<Field name="delay" predef="struct ValueRangeInt" />
+		<Field name="explosion_delay_id" predef="int" />
+		<Field name="who_is_responsible" predef="int" />
+		<Field name="dont_damage_this" predef="int" />
+		<Field name="impl_send_message_to_this" predef="int" />
+		<Field name="impl_position" predef="class ceng::math::CVector2[int]" />
+		<Field name="impl_delay_frame" predef="int" />
+	</Object>
+
+	<Object name="class ConfigGun" size="20">
+		<Field name="actions_per_round" predef="int" />
+		<Field name="shuffle_deck_when_empty" predef="bool" />
+		<Field name="reload_time" predef="int" />
+		<Field name="deck_capacity" predef="int" />
+	</Object>
+
+	<Object name="class ConfigGunActionInfo" size="540">
+		<Field name="action_id" predef="string" />
+		<Field name="action_name" predef="string" />
+		<Field name="action_description" predef="string" />
+		<Field name="action_sprite_filename" predef="string" />
+		<Field name="action_unidentified_sprite_filename" predef="string" />
+		<Field name="action_type" predef="int" />
+		<Field name="action_spawn_level" predef="string" />
+		<Field name="action_spawn_probability" predef="string" />
+		<Field name="action_spawn_requires_flag" predef="string" />
+		<Field name="action_max_uses" predef="int" />
+		<Field name="custom_xml_file" predef="string" />
+		<Field name="action_mana_drain" predef="double" />
+		<Field name="action_is_dangerous_blast" predef="bool" />
+		<Field name="action_draw_many_count" predef="int" />
+		<Field name="state_shuffled" predef="bool" />
+		<Field name="state_cards_drawn" predef="int" />
+		<Field name="state_discarded_action" predef="bool" />
+		<Field name="state_destroyed_action" predef="bool" />
+		<Field name="fire_rate_wait" predef="int" />
+		<Field name="speed_multiplier" predef="double" />
+		<Field name="child_speed_multiplier" predef="double" />
+		<Field name="dampening" predef="double" />
+		<Field name="explosion_radius" predef="double" />
+		<Field name="spread_degrees" predef="double" />
+		<Field name="pattern_degrees" predef="double" />
+		<Field name="screenshake" predef="double" />
+		<Field name="recoil" predef="double" />
+		<Field name="damage_melee_add" predef="double" />
+		<Field name="damage_projectile_add" predef="double" />
+		<Field name="damage_electricity_add" predef="double" />
+		<Field name="damage_fire_add" predef="double" />
+		<Field name="damage_explosion_add" predef="double" />
+		<Field name="damage_critical_chance" predef="int" />
+		<Field name="damage_critical_multiplier" predef="double" />
+		<Field name="explosion_damage_to_materials" predef="double" />
+		<Field name="knockback_force" predef="double" />
+		<Field name="reload_time" predef="int" />
+		<Field name="lightning_count" predef="int" />
+		<Field name="material" predef="string" />
+		<Field name="material_amount" predef="int" />
+		<Field name="trail_material" predef="string" />
+		<Field name="trail_material_amount" predef="int" />
+		<Field name="bounces" predef="int" />
+		<Field name="gravity" predef="double" />
+		<Field name="light" predef="double" />
+		<Field name="blood_count_multiplier" predef="double" />
+		<Field name="gore_particles" predef="int" />
+		<Field name="ragdoll_fx" predef="int" />
+		<Field name="friendly_fire" predef="bool" />
+		<Field name="physics_impulse_coeff" predef="double" />
+		<Field name="sprite" predef="string" />
+		<Field name="extra_entities" predef="string" />
+		<Field name="game_effect_entities" predef="string" />
+		<Field name="sound_loop_tag" predef="string" />		
+		<Field name="projectile_file" predef="string" />
+	</Object>
+
+	<Alias name="class PixelSprite *" alias="unsigned int" />
+
+	<List name="class std::map[class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ],class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ],struct std::less[class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ] ],class std::allocator[struct std::pair[class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ] const ,class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ] ] ] ]" size="8" entry_name="E">
+		<Field name="key" predef="string" />
+		<Field name="value" predef="string" />
+	</List>
+
+	<List name="class std::vector[class ceng::math::CVector2[float],class std::allocator[class ceng::math::CVector2[float] ] ]" size="12" entry_name="Vec2">
+		<Field name="x" predef="float" />
+		<Field name="y" predef="float" />
+	</List>
+
+	<List name="class std::vector[class ConfigNpcParty,class std::allocator[class ConfigNpcParty] ]" size="12" unknown="1" />
+	<List name="class std::vector[class ConfigPendingPortal,class std::allocator[class ConfigPendingPortal] ]" size="12" unknown="1" />
+
+	<List name="class std::vector[class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ],class std::allocator[class std::basic_string[char,struct std::char_traits[char],class std::allocator[char] ] ] ]" size="12" entry_name="string">
+		<Field name="#text" predef="string" /> <!-- #text has special meaning - it's the tag's text content -->
+	</List>
+
+	<!-- only used in count_per_material_type -->
+	<List name="class std::vector[double,class std::allocator[double] ]" size="12" entry_name="Material">
+		<Field name="material" predef="string" />
+		<Field name="count" predef="int" />
+	</List>
+
+	<List name="class std::vector[float,class std::allocator[float] ]" size="12" unknown="1" />
+
+	<!-- CellEaterComponent special case => 'materials' int vector is a CSV list of material names -->
+	<!-- kill me -->
+	<List name="class std::vector[int,class std::allocator[int] ]" size="12" entry_name="primitive">
+		<Field name="#text" predef="int" />
+	</List>
+
+	<List name="class std::vector[struct PathFindingJumpParams,class std::allocator[struct PathFindingJumpParams] ]" size="12" entry_name="JumpTrajectory">
+		<Field name="x" predef="float" />
+		<Field name="y" predef="float" />
+		<Field name="lob" predef="bool" />
+	</List>
+
+	<!-- AAAAaaaaaaaaaaaaAAAAAAAAAAaaaaaAAAAaaaAaaaAAaaAaaaAaaAAaaAAAAAA -->
+	<Primitive name="class std::vector[unsigned char,class std::allocator[unsigned char] ]" type="string" size="12" />
+
+	<Primitive name="enum ARC_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum BUILDINGUI_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum DAMAGE_TYPES::Enum" type="string" size="4" />
+	<Primitive name="enum ENDGAME_TIME::Enum" type="string" size="4" />
+	<Primitive name="enum EXPLOSION_TRIGGER_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum GAME_EFFECT::Enum" type="string" size="4" />
+	<Primitive name="enum HIT_EFFECT::Enum" type="string" size="4" />
+	<Primitive name="enum INVENTORY_KIND::Enum" type="string" size="4" />
+	<Primitive name="enum JOINT_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum LUA_VM_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum MOVETOSURFACE_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum PARTICLE_EMITTER_CUSTOM_STYLE::Enum" type="string" size="4" />
+	<Primitive name="enum PROJECTILE_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum RAGDOLL_FX::Enum" type="string" size="4" />
+	<Primitive name="enum STATUSEFFECT_TYPE::Enum" type="string" size="4" />
+	<Primitive name="enum VERLET_TYPE::Enum" type="string" size="4" />
+
+	<Object name="struct ceng::math::CXForm[float]" size="32">
+		<Field name="position.x" predef="float" />
+		<Field name="position.y" predef="float" />
+		<Field name="scale.x" predef="float" />
+		<Field name="scale.y" predef="float" />
+		<Field name="rotation" predef="float" />
+	</Object>
+
+	<Primitive name="struct LensValue[int]" type="int" size="12" />
+	<Primitive name="struct LensValue[float]" type="float" size="12" />
+	<Primitive name="struct LensValue[bool]" type="bool" size="8" />
+
+	<Alias name="struct SpriteStains *" alias="unsigned int" />
+
+	<MultiAttr name="struct types::aabb" size="16">
+		<Field name="min_x" predef="int" />
+		<Field name="min_y" predef="int" />
+		<Field name="max_x" predef="int" />
+		<Field name="max_y" predef="int" />
+	</MultiAttr>
+
+	<Primitive name="struct UintArrayInline" type="string" size="640" unknown="1" />
+
+	<!-- Special stuff -->
+	<Primitive name="string.hexcolor" type="string" size="24" nice_name="color" />
+	<Primitive name="string.csv" type="string" size="24" nice_name="stringlist" />
+</MetaSchema>
