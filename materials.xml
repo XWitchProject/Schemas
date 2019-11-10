@@ -23,7 +23,6 @@
 		<Field name="require_same_material_type" predef="bool" />
 		<Field name="overwrite" predef="bool" />
 		<Field name="color" predef="string.hexcolor" />
-		<Field name="" predef="bool" />
 	</Object>
 
 	<Object name="Edge">
