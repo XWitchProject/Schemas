@@ -1,4 +1,4 @@
-﻿<MetaSchema id="ecs">
+﻿<XWitchSchema id="ecs" sized="1">
 	<SchemaOverrides>
 		<Override component="CellEaterComponent" var="materials" override_type="string" />
 	</SchemaOverrides>
@@ -193,6 +193,7 @@
 		<Field name="ragdoll_fx" predef="int" />
 		<Field name="friendly_fire" predef="bool" />
 		<Field name="physics_impulse_coeff" predef="double" />
+		<Field name="lifetime_add" predef="int" />
 		<Field name="sprite" predef="string" />
 		<Field name="extra_entities" predef="string" />
 		<Field name="game_effect_entities" predef="string" />
@@ -285,4 +286,4 @@
 	<!-- Special stuff -->
 	<Primitive name="string.hexcolor" type="string" size="24" nice_name="color" />
 	<Primitive name="string.csv" type="string" size="24" nice_name="stringlist" />
-</MetaSchema>
+</XWitchSchema>

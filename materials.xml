@@ -1,4 +1,4 @@
-<MetaSchema id="materials" inherit="ecs" unsized="1">
+<XWitchSchema id="materials" inherit="ecs">
 	<Primitive name="enum.SOLID_STATIC" type="int" size="4" nice_name="materialtype" />
 	<Primitive name="string.direction" type="string" size="24"  nice_name="direction" />
 
