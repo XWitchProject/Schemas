@@ -142,7 +142,7 @@
 		<Field name="deck_capacity" predef="int" />
 	</Object>
 
-	<Object name="class ConfigGunActionInfo" size="540">
+	<Object name="class ConfigGunActionInfo" size="544">
 		<Field name="action_id" predef="string" />
 		<Field name="action_name" predef="string" />
 		<Field name="action_description" predef="string" />
