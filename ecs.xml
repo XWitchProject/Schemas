@@ -67,9 +67,13 @@
 	</Object>
 
 	<Object name="class ConfigExplosion" size="356">
+		<Field name="never_cache" predef="bool" />
+		<Field name="explosion_radius" predef="double" />
+		<Field name="explosion_sprite" predef="string" />
 		<Field name="explosion_sprite_emissive" predef="bool" />
 		<Field name="explosion_sprite_additive" predef="bool" />
 		<Field name="explosion_sprite_random_rotation" predef="double" />
+		<Field name="explosion_sprite_lifetime" predef="double" />
 		<Field name="damage" predef="double" />
 		<Field name="damage_critical" predef="class ConfigDamageCritical" />
 		<Field name="camera_shake" predef="double" />
@@ -108,7 +112,6 @@
 		<Field name="ray_energy" predef="int" />
 		<Field name="max_durability_to_destroy" predef="int" />
 		<Field name="gore_particle_count" predef="int" />
-		<Field name="sparks_count_min" predef="int" />
 		<Field name="shake_vegetation" predef="bool" />
 		<Field name="damage_mortals" predef="bool" />
 		<Field name="physics_throw_enabled" predef="bool" />
